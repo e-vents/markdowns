@@ -59,11 +59,33 @@ true
 ```
 Most Languages would throw an exception here as well. Because all numbers in JavaScript are floats, according to the IEEE-Standard infinity is used. Furthermore JavaScript natively supports the Math object which is almost the same as in Java.
 ### Boolean
-
+JavaScript supports a logic data type with the literals **true** and **false**.
+The following comparison operators are supported: <, >, ==, !=, <=, >=
+### null
+Null is a data type with a single value: **null**.
+Confusing is that null is classified as an object.
+```javascript
+> n = null
+null
+> typeof n
+"object"
+```
+This is a JavaScript bug as well and is maintained in favor of backwar compatibility. Nevertheless null is a separate data type.
+It is possible to assign null to an exsisting variable with an other data type. The type will change and the reference will be deleted.
+```javascript
+> q = 2
+2
+> typeof q
+"number"
+> q = null
+null
+> typeof q
+"object"
+```
 ### Undefined
-
+Undefined will be used if you try to access a non-existent property or if you use a variable which has not yet been declared.
 ### Object
-
+All other data types in JavaScript are objects. This includes: arrays, functions, data and custom objects. For more information to objects see chapter [Objects](##Objects).
 ### Truthyness and Falseyness of values
 
 ### Dynamic typing
