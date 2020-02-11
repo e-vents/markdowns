@@ -23,7 +23,7 @@ Strings are a separate data type, but like objects have their own **methods** an
 > s.length //property
 11
 ```
-Like Java-Strings JavaScript-Strings are immutable and work with obejct references. 
+Like Java-Strings, JavaScript-Strings are **immutable** and work with **obejct references**. 
 ```javascript
 > s = 'Hello World'
 > t = s
@@ -36,7 +36,28 @@ true
 "Hello World"
 ```
 ### Numbers
+All JavaScript numbers are 64-Bit floating point numbers
+That's why calculation with two integer can result in a float:
+```javascript
+> 1/3
+0.33333333333333
+```
+Beside "real" numbers JavaScript also supports special values such as **NaN**, **Infinty** and **-Infinity**.
+```javascript
+> a = 2/undefined
+NaN
+> typeof a
+"number" //NaN is type of number.
+//It would be better if JavaScript would throw an exception at this point
 
+> b = 8/0
+Infinity
+> b == Number.POSITIVE_INFINITY
+true
+> c = -3/0
+-Infinity
+```
+Most Languages would throw an exception here as well. Because all numbers in JavaScript are floats, according to the IEEE-Standard infinity is used. Furthermore JavaScript natively supports the Math object which is almost the same as in Java.
 ### Boolean
 
 ### Undefined
