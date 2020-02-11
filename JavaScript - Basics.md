@@ -2,12 +2,12 @@
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 ## Data types
 JavaScript knows the following data types
-- [string](###Strings)
-- [number](###Numbers)
-- [boolean](###Boolean)
-- [null](###Null)
-- [undefined](###Undefined)
-- [object](###Objects)
+- [string](#Strings)
+- [number](#Numbers)
+- [boolean](#Boolean)
+- [null](#Null)
+- [undefined](#Undefined)
+- [object](#Objects)
 ### Strings
 You can use single or double quotes to define a string.
 ```javascript
@@ -85,7 +85,7 @@ null
 ### Undefined
 Undefined will be used if you try to access a non-existent property or if you use a variable which has not yet been declared.
 ### Object
-All other data types in JavaScript are objects. This includes: arrays, functions, data and custom objects. For more information to objects see chapter [Objects](##Objects).
+All other data types in JavaScript are objects. This includes: arrays, functions, data and custom objects. For more information to objects see chapter [Objects](#Objects).
 ### Truthyness and Falseyness of values
 
 ### Dynamic typing
