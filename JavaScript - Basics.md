@@ -10,20 +10,19 @@ JavaScript knows the following data types
 - object
 ### Strings
 You can use single or double quotes to define a string.
-´´´javascript
+```javascript
 > s = 'Hello World'
 "Hello World"
 > typeof s
 "string"
-´´´
+```
 Strings are a separate data type, but like objects have their own methods and attributes.
-´´´javascript
+```javascript
 > s.charAt(1)
 "e"
-
 > s.length
 11
-´´´
+```
 Like Java-Strings JavaScript-Strings are immutable and working with obejct references. 
 ### Numbers
 
