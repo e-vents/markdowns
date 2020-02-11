@@ -1,14 +1,17 @@
 # JavaScript - Basics
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 ## Data types
-JavaScript knows the following data types:      We'll also going to take a look at these topics:
----
-- [string](#String)                             [Truthyness and Falseyness of values](#Truthyness and Falseyness of values)
-- [number](#Number)                             [dynamic typing](#dynamic typing)
+JavaScript knows the following data types:      
+- [string](#String)
+- [number](#Number)
 - [boolean](#Boolean)
 - [null](#Null)
 - [undefined](#Undefined)
 - [object](#Object)
+---
+We'll also going to take a look at these topics:
+[Truthyness_and_Falseyness_of_values](#Truthyness and Falseyness of values)
+[dynamic_typing](#dynamic typing)
 ### String
 You can use single or double quotes to define a string.
 ```javascript
