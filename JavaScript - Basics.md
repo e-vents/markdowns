@@ -1,14 +1,15 @@
 # JavaScript - Basics
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 ## Data types
-JavaScript knows the following data types
-- [string](#Strings)
-- [number](#Numbers)
+JavaScript knows the following data types: | We'll also going to take a look at these topics:
+------------------------------------------ | ------------------------------------------------
+- [string](#String)
+- [number](#Number)
 - [boolean](#Boolean)
 - [null](#Null)
 - [undefined](#Undefined)
-- [object](#Objects)
-### Strings
+- [object](#Object)                        | [Truthyness and Falseyness of values](#Truthyness and Falseyness of values) and [dynamic typing](#dynamic typing)
+### String
 You can use single or double quotes to define a string.
 ```javascript
 > s = 'Hello World'
@@ -35,7 +36,7 @@ true
 > t //has not changed
 "Hello World"
 ```
-### Numbers
+### Number
 All JavaScript numbers are 64-Bit-floating-point-numbers
 That's why a calculation with two integer can result in a float:
 ```javascript
