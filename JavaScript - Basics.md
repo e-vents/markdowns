@@ -2,12 +2,12 @@
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 ## Data types
 JavaScript knows the following data types
-- string
-- number
-- boolean
-- null
-- undefined
-- object
+- [string](###Strings)
+- [number](###Numbers)
+- [boolean](###Boolean)
+- [null](###Null)
+- [undefined](###Undefined)
+- [object](###Objects)
 ### Strings
 You can use single or double quotes to define a string.
 ```javascript
@@ -36,8 +36,8 @@ true
 "Hello World"
 ```
 ### Numbers
-All JavaScript numbers are 64-Bit floating point numbers
-That's why calculation with two integer can result in a float:
+All JavaScript numbers are 64-Bit-floating-point-numbers
+That's why a calculation with two integer can result in a float:
 ```javascript
 > 1/3
 0.33333333333333
@@ -61,7 +61,7 @@ Most Languages would throw an exception here as well. Because all numbers in Jav
 ### Boolean
 JavaScript supports a logic data type with the literals **true** and **false**.
 The following comparison operators are supported: <, >, ==, !=, <=, >=
-### null
+### Null
 Null is a data type with a single value: **null**.
 Confusing is that null is classified as an object.
 ```javascript
@@ -70,8 +70,8 @@ null
 > typeof n
 "object"
 ```
-This is a JavaScript bug as well and is maintained in favor of backwar compatibility. Nevertheless null is a separate data type.
-It is possible to assign null to an exsisting variable with an other data type. The type will change and the reference will be deleted.
+This is a JavaScript bug as well and is maintained in favor of backward compatibility. Nevertheless null is a separate data type.
+It is possible to assign null to an exsisting variable with an other data type. The type will changed and the reference will be deleted.
 ```javascript
 > q = 2
 2
