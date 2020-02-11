@@ -9,9 +9,9 @@ JavaScript knows the following data types:
 - [undefined](#Undefined)
 - [object](#Object)
 ---
-We'll also going to take a look at these topics:
-[Truthyness_and_Falseyness_of_values](#Truthyness and Falseyness of values)
-[dynamic_typing](#dynamic typing)
+We'll also going to take a look at these topics in this chapter:
+- Truthyness and Falseyness of values
+- Dynamic typing
 ### String
 You can use single or double quotes to define a string.
 ```javascript
