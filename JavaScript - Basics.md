@@ -8,6 +8,7 @@ JavaScript knows the following data types:
 - [null](#Null)
 - [undefined](#Undefined)
 - [object](#Object)
+
 In this chapter we'll also going to take a look at these topics:
 - Truthyness and Falseyness of values
 - Dynamic typing
