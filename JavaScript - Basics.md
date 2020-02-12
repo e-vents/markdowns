@@ -8,8 +8,7 @@ JavaScript knows the following data types:
 - [null](#Null)
 - [undefined](#Undefined)
 - [object](#Object)
----
-We'll also going to take a look at these topics in this chapter:
+In this chapter we'll also going to take a look at these topics:
 - Truthyness and Falseyness of values
 - Dynamic typing
 ### String
@@ -75,7 +74,7 @@ null
 "object"
 ```
 This is a JavaScript bug as well and is maintained in favor of backward compatibility. Nevertheless null is a separate data type.
-It is possible to assign null to an exsisting variable with an other data type. The type will changed and the reference will be deleted.
+It is possible to assign null to an exsisting variable with an other data type. The type will change and the reference will be deleted.
 ```javascript
 > q = 2
 2
@@ -89,9 +88,49 @@ null
 ### Undefined
 Undefined will be used if you try to access a non-existent property or if you use a variable which has not yet been declared.
 ### Object
-All other data types in JavaScript are objects. This includes: arrays, functions, data and custom objects. For more information to objects see chapter [Objects](#Objects).
+All other data types in JavaScript are objects. This includes: **arrays**, **functions**, **data** and **custom objects**. For more information to objects see chapter [Objects](#Objects).
 ### Truthyness and Falseyness of values
-
+It is important to know that some of the data types evaluate to true and other to false.
+JavaScript handles the following as false:
+- false
+- 0 (null)
+- "" (empty string)
+- undefined
+- NaN
+```javascript
+> 0 == false
+true
+```
+All other types evaluate to true.
+Because of that, you can write this:
+```javascript
+> if (a == undefined || a == NaN) {
+    a = 1
+}
+```
+like that:
+```javascript
+> if (!a) {
+    a = 1
+}
+```
+The same is true if you want to use a variable only if it hold a valid value:
+```javascript
+> if(a) {
+    console.log(a)
+}
+```
+This short form is extremely useful and is used very often in JavaScript.
+Last but not least, you should understand which values are considered the same in JavaScript. It may be surprising:
+```javascript
+> null == undefined
+true
+> 5 == "5"
+true
+> "true" == true
+false
+> 
+```
 ### Dynamic typing
 
 ## Objects
