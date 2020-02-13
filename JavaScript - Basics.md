@@ -2,6 +2,17 @@
 
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 
+Overview of the covered topics for quick access:
+- [Data Types](#data-types)
+- [JSON](#json)
+- [Prototypes](#prototypes)
+- [Functional programming](#functional-programming)
+- [Function arguments](#function-arguments)
+- [Closures](#closures)
+- [Scope and this](#scope-and-this)
+- [Exception handling](#exception-handling)
+- [Threads](#threads)
+
 ## Data types
 
 JavaScript knows the following data types:      
