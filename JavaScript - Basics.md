@@ -4,6 +4,7 @@ JavaScript is a very flexible language. You don't have to be disciplined and you
 
 Overview of the covered topics for quick access:
 - [Data Types](#data-types)
+- [Objects](#objects)
 - [JSON](#json)
 - [Prototypes](#prototypes)
 - [Functional programming](#functional-programming)
