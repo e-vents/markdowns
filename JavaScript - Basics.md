@@ -168,14 +168,48 @@ false
 false
 ```
 Until you have a strong reason to compare values with different data types, use this alternative equality operators.
-> 
+> Hint: to find out if a value is truthy oder falsey, print it out with two prefixed exclamation marks:
+```javascript
+> !!""
+false
+> !!"something"
+true
+```
 
 ### Dynamic typing
 
-
+JavaScript uses dynamic type checking. Thats why the **typeof** operator is of great importance:
+```javascript
+> function add(v1, v2) {
+    if(v1 typeof 'number' && v2 typeof 'number') {
+        return v1 + v2;
+    } else {
+        throw 'both argument must be numbers';
+    }
+}
+```
 
 ## Objects
 
+Most values in JavaScript are objects. JavaScript also supports a syntax for the definition of classes from which objects can be derived. Nevertheless JavaScript isn't a usual object oriented language. In fact classes don't play a major role in JavaScript. Let's look at the most simple way to create an object:
+```javascript
+> obj = {}
+> typeof obj
+"object"
+```
+May be your are now wondering what exact type of obj is. This object doesn't have a type. In "normal" oop languages suitability of an object is usually determined an objects type. For example: i can use a number for a mathematical operation. In javaScript you simply do **duck typing**. That means: if it looks like a number and behaves like one, it probably is one. More specific: 
+> In duck typing an object's suitability is determined by the presence of certain methods and properties, rather than the type of the obejct itself. (https://en.wikipedia.org/wiki/Duck_typing)
+To this empty object named obj, we can now dynamically add methods and properties:
+```javascript
+> obj.firstName = 'Peter'
+> obj.lastName = 'Merian'
+> obj.age = 45
+
+> obj.increaseAge = function() {
+    this.age++;
+}
+```
+> Functions within objects are called methods. The difference between them is that within method you can reference to the object itself with the special variable **this**. If you want to learn more about this jump to this chapter: [Scope and ]
 ## JSON
 
 ## Prototypes
