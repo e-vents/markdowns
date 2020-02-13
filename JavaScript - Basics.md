@@ -209,7 +209,7 @@ To this empty object named obj, we can now dynamically add methods and propertie
     this.age++;
 }
 ```
-> Functions within objects are called methods. The difference between them is that within a method you can reference to the object itself with the special variable **this**. If you want to learn more about this jump to this chapter: [Scope and this](#Scope%20and%20this)
+> Functions within objects are called methods. The difference between them is that within a method you can reference to the object itself with the special variable **this**. If you want to learn more about this jump to this chapter: [Scope and this](#scope-and-this)
 ## JSON
 
 ## Prototypes
