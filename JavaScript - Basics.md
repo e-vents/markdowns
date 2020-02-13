@@ -2,6 +2,8 @@
 
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
 
+This script is based on the notes i made while reading the book from dane cameron: A Software Engineer Learns HTML5, JavaScript and jQuery: A guide to standards-based web applications
+
 Overview of the covered topics for quick access:
 - [Data Types](#data-types)
 - [Objects](#objects)
@@ -211,6 +213,7 @@ Most values in JavaScript are objects. JavaScript also supports a syntax for the
 ```
 May be your are now wondering what exact type of obj is. This object doesn't have a type. In "normal" oop languages suitability of an object is usually determined an objects type. For example: i can use a number for a mathematical operation. In javaScript you simply do **duck typing**. That means: if it looks like a number and behaves like one, it probably is one. More specific: 
 > In duck typing an object's suitability is determined by the presence of certain methods and properties, rather than the type of the obejct itself. (https://en.wikipedia.org/wiki/Duck_typing)
+
 To this empty object named obj, we can now dynamically add methods and properties:
 ```javascript
 > obj.firstName = 'Peter'
