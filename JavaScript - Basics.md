@@ -1,6 +1,9 @@
 # JavaScript - Basics
+
 JavaScript is a very flexible language. You don't have to be disciplined and you don't have to be particularly structured, to use this language. Furthermore JavaScript has a number of functions which can only be called bugs. You need to know these in order to work properly with this language. In the following chapters we'll take a closer look at the language. Basic knowledge in an object oriented language is required.
+
 ## Data types
+
 JavaScript knows the following data types:      
 - [string](#String)
 - [number](#Number)
@@ -12,7 +15,9 @@ JavaScript knows the following data types:
 In this chapter we'll also going to take a look at these topics:
 - Truthyness and Falseyness of values
 - Dynamic typing
+
 ### String
+
 You can use single or double quotes to define a string.
 ```javascript
 > s = 'Hello World'
@@ -39,7 +44,9 @@ true
 > t //has not changed
 "Hello World"
 ```
+
 ### Number
+
 All JavaScript numbers are 64-Bit-floating-point-numbers
 That's why a calculation with two integer can result in a float:
 ```javascript
@@ -62,10 +69,14 @@ true
 -Infinity
 ```
 Most Languages would throw an exception here as well. Because all numbers in JavaScript are floats, according to the IEEE-Standard infinity is used. Furthermore JavaScript natively supports the Math object which is almost the same as in Java.
+
 ### Boolean
+
 JavaScript supports a logic data type with the literals **true** and **false**.
 The following comparison operators are supported: <, >, ==, !=, <=, >=
+
 ### Null
+
 Null is a data type with a single value: **null**.
 Confusing is that null is classified as an object.
 ```javascript
@@ -86,11 +97,17 @@ null
 > typeof q
 "object"
 ```
+
 ### Undefined
+
 Undefined will be used if you try to access a non-existent property or if you use a variable which has not yet been declared.
+
 ### Object
+
 All other data types in JavaScript are objects. This includes: **arrays**, **functions**, **data** and **custom objects**. For more information to objects see chapter [Objects](#Objects).
+
 ### Truthyness and Falseyness of values
+
 It is important to know that some of the data types evaluate to true and other to false.
 JavaScript handles the following as false:
 - false
@@ -115,7 +132,7 @@ like that:
     a = 1
 }
 ```
-The same is true if you want to use a variable only if it hold a valid value:
+The same is true if you want to use a variable only if it holds a valid value:
 ```javascript
 > if(a) {
     console.log(a)
@@ -130,9 +147,32 @@ true
 true
 > "true" == true
 false
-> 
+> "1" == true
+true
+> "2" == true
+false
 ```
+You can see some contradictions in this example. Some typical JavaScript bugs. Null should not be equal to undefined. Even if both values are falsey, they still represent other data types. Fortunately JavaScript provides alternative equality operators:
+- ===
+- ==!
+
+This operators compare variables based on their data type. The result looks much more familiar:
+```javascript
+> null === undefined
+false
+> 5 === "5"
+false
+> "true" === true
+false
+> "1" === true
+false
+```
+Until you have a strong reason to compare values with different data types, use this alternative equality operators.
+> 
+
 ### Dynamic typing
+
+
 
 ## Objects
 
