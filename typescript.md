@@ -202,3 +202,21 @@ const func = (...numbers: numbers[]) => {
 
 func(2, 10, 6, 7.2); // outputs 25.2
 ````
+## Array and Object Destructuring
+This snipped of code does create three variables. Two with single string values and one new string[] with the remaining values from the original hobbies[].
+````typescript
+// does not change the original array
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+
+// the same is possible for objects
+const person {
+    firstName: 'max',
+    age: 30
+};
+
+// here you have to specify the corresponding names of the original obejcts keys.
+// assinging the value to a new key with a different identifier is possible though.
+const { firstName: givenName, age } = person;
+console.log(givenName, age);
+````
+Everything above is JavaScript syntax.
