@@ -252,11 +252,12 @@ const person {
     firstName: 'max',
     age: 30
 };
-
-// here you have to specify the corresponding names of the 
+/*
+here you have to specify the corresponding names of the 
 original obejcts keys.
-// assinging the value to a new key with a different 
+Assinging the value to a new key with a different 
 identifier is possible though.
+*/
 const { firstName: givenName, age } = person;
 console.log(givenName, age);
 ````
