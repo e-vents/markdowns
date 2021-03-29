@@ -1,5 +1,22 @@
+# Introduction
+This is a summary of the features of TypScript and, partly of next-gen JavaScript.
+
+These topics are covered (quick access):
+- [Types](#types)
+- [Next-gen JS and TS](#next-gen-js-and-ts)
+- [Advanced Types](#advanced-types)
+
+Have fun!
 
 # Types
+These topics are covered in this chapter (quick access):
+- [Tuples](#tuples)
+- [Union Types](#union-types)
+- [Literal Types](#literal-types)
+- [Type Aliases](#type-aliases)
+- [Function Types](#function-types)
+- [Type "unknown"](#type-"unknown")
+- [Type "never"](#type-"never")
 
 ## Tuples 
 are not supported in VanillaJS. It is a fixed length and fixed typed array.
@@ -12,7 +29,7 @@ the push method of arrays is an exception, meaning that the compiler does not ca
 role.push('author');
 ````
 
-## Enum
+## Enums
 Enum values receive a numberic value stating from 0. This behavior can be changed by assinging custom values. The second element is picking up on the assigned value of 5 and will be assigned to 6.
 ````typescript
 enum Role { ADMIN = 5, READONLY, AUTHOR = 'also valid' }
@@ -21,7 +38,7 @@ if (Role.READONLY) {
 }
 ````
 
-## Union Type
+## Union Types
 Role is eighter a number or a boolean:
 ````typescript
 function combine(i1: number | boolean, i2: number | boolean) {
@@ -59,8 +76,8 @@ function combine(
 // outputs 3012 of type number
 const combineStringAges = combine('30', '12', 'as-number');
 ````
-## Type Aliases / Custom Types
-Working with union types can be cumbersome and type aliases can be a good feature to simplify this.
+## Type Aliases
+They are also called **custom types**. Working with union types can be cumbersome and type aliases can be a good feature to simplify this.
 ````typescript
 type Combinable = number | string;
 type ConversioDescriptor = 'as-number' | 'as-text'
@@ -131,9 +148,19 @@ function generateError(msg: string, code: number): never {
 generateError('error occured', 500);
 ```
 
-# Next-gen JavaScript and TypeScript
+# Next-gen JS and TS
 This chapter is refering to JS in the version ES6 or newer.
-## let and const keywords
+
+These topics are covered in this chapter (quick access):
+- [let and const Keywords](#let-and-const-keywords)
+- [Arrow Functions](#arrow-functions)
+- [Default Arguments](#default-arguments)
+- [Type Aliases](#type-aliases)
+- [Spread Operator](#spread-operator)
+- [Rest Parameter](#rest-parameter)
+- [Array and Object Destructuring](#array-and-object-destructuring)
+
+## let and const Keywords
 With var you do have a global and a function scope. It is 
 possible to access variables which are defined globally 
 from inside a function, but not in vice versa. What is not 
@@ -237,3 +264,7 @@ console.log(givenName, age);
 Everything above is JavaScript syntax.
 
 # Advanced Types
+These topics are covered in this chapter (quick access):
+- [l](#l)
+
+
