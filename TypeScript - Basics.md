@@ -254,7 +254,7 @@ const person {
 };
 /*
 here you have to specify the corresponding names of the 
-original obejcts keys.
+original objects keys.
 Assinging the value to a new key with a different 
 identifier is possible though.
 */
@@ -275,6 +275,7 @@ These topics are covered in this chapter (quick access):
 - [Nullish Coalescing](#nullish-coalescing)
 - [Intersection Types](#intersection-types)
 
+## Intersection Types
 In case of union types, the intersection would be the types, for example of two union types. For number | string and number | boolean this would be number. 
 
 In case of objects, the intersection is the combination of both types:
