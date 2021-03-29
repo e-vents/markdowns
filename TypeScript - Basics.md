@@ -155,7 +155,6 @@ These topics are covered in this chapter (quick access):
 - [let and const Keywords](#let-and-const-keywords)
 - [Arrow Functions](#arrow-functions)
 - [Default Arguments](#default-arguments)
-- [Type Aliases](#type-aliases)
 - [Spread Operator](#spread-operator)
 - [Rest Parameter](#rest-parameter)
 - [Array and Object Destructuring](#array-and-object-destructuring)
@@ -195,7 +194,7 @@ if (button) {
     button.addListener('click', event => console.log(event);
 }
 ```
-where it is possible to even emit the function braces.
+where it is possible to even omit the function braces.
 
 ## Default Arguments
 When using default arguments, it is important, that they 
