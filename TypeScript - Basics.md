@@ -1,3 +1,4 @@
+
 # Types
 
 ## Tuples 
@@ -75,14 +76,16 @@ const u1: User = { name: 'Max', age: 30 };
 ````
 
 ## Function Types
-To the variable combine every function which matches this signature, can be assigned: 
+To the variable combine every function which matches this 
+signature, can be assigned: 
 ````typescript
 let combine: (a: Combinable, b: Combinable) => string;
 ````
 
 ### Concrete Implementation with callbacks
 ```typescript
-function addAndHandle(a: number, b: number, cb: (n: number) => void) {
+function addAndHandle(a: number, b: number, cb: (n: number) 
+=> void) {
     const result = a + b;
     cb(results);
 }
@@ -96,7 +99,8 @@ hint: callback functions can return something, even if the
  returned value. The returned value will be ignored.
 
 ## Type "unknown"
-Unknown is mostentimes the better choice over any, because it provides at least some type checking:
+Unknown is mostentimes the better choice over any, because 
+it provides at least some type checking:
 
 ````typescript
 userInput1: unknown;
@@ -113,7 +117,11 @@ userName = userInput2; // doesn't throw an error
 ````
 
 ## Type "never"
-The infered type here would actually be void. If you want to make your intention with such a function very clear, it is best to do it so, using the never type. It clearly states, that not even undefined is returned, but instead the script is crashed at this point.
+The infered type here would actually be void. If you want 
+to make your intention with such a function very clear, it 
+is best to do it so, using the never type. It clearly 
+states, that not even undefined is returned, but instead 
+the script is crashed at this point.
 ```typescript
 function generateError(msg: string, code: number): never {
     // while(true) { } would be another use-case
@@ -149,14 +157,15 @@ can be shortened according to the arrow function notation:
 ```typescript
 const func = (a: number, b: number) => a + b;
 ```
-This is possible, since there is always an implicit return statement, when using this notation.
+This is possible, since there is always an implicit return 
+statement, when using this notation.
 
 Another neat way of using this notation is the following:
 ```typescript
 const button = document.querySelector('button');
 
 if (button) {
-    button.addListener('click', event => console.log(event));
+    button.addListener('click', event => console.log(event);
 }
 ```
 where it is possible to even emit the function braces.
@@ -172,7 +181,8 @@ func(2);
 ````
 
 ## Spread Operator
-To avoid cumbersome array operations, the spread operator can be used as follows:
+To avoid cumbersome array operations, the spread operator 
+can be used as follows:
 ````typescript
 const hobbies = ['skiing', 'freeletics'];
 const activeHobbies = ['hiking', ...hobbies];
@@ -192,7 +202,8 @@ const copiedPerson = { ...person };
 ````
 
 ## Rest Parameter
-Using a unlimited and fleible amount of parameters. Here in combination with the reduce method provided for arrays.
+Using a unlimited and fleible amount of parameters. Here in 
+combination with the reduce method provided for arrays.
 ````typescript
 const func = (...numbers: numbers[]) => {
     return numbers.reduce((curResult, curValue) => {
@@ -203,7 +214,9 @@ const func = (...numbers: numbers[]) => {
 func(2, 10, 6, 7.2); // outputs 25.2
 ````
 ## Array and Object Destructuring
-This snipped of code does create three variables. Two with single string values and one new string[] with the remaining values from the original hobbies[].
+This snipped of code does create three variables. Two with 
+single string values and one new string[] with the 
+remaining values from the original hobbies[].
 ````typescript
 // does not change the original array
 const [hobby1, hobby2, ...remainingHobbies] = hobbies;
@@ -214,9 +227,13 @@ const person {
     age: 30
 };
 
-// here you have to specify the corresponding names of the original obejcts keys.
-// assinging the value to a new key with a different identifier is possible though.
+// here you have to specify the corresponding names of the 
+original obejcts keys.
+// assinging the value to a new key with a different 
+identifier is possible though.
 const { firstName: givenName, age } = person;
 console.log(givenName, age);
 ````
 Everything above is JavaScript syntax.
+
+# Advanced Types
