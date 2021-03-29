@@ -116,9 +116,89 @@ userName = userInput2; // doesn't throw an error
 The infered type here would actually be void. If you want to make your intention with such a function very clear, it is best to do it so, using the never type. It clearly states, that not even undefined is returned, but instead the script is crashed at this point.
 ```typescript
 function generateError(msg: string, code: number): never {
+    // while(true) { } would be another use-case
     throw { message: msg, statusCode: code };
 }
 
 generateError('error occured', 500);
 ```
 
+# Next-gen JavaScript and TypeScript
+This chapter is refering to JS in the version ES6 or newer.
+## let and const keywords
+With var you do have a global and a function scope. It is 
+possible to access variables which are defined globally 
+from inside a function, but not in vice versa. What is not 
+available with var though, is a scope within for example an 
+if statement.
+
+That is why var should be substituted with let in almost 
+any case. Let and const have a different scope than var 
+does. The so called **block scope**. A variable is always 
+available only for the block (snipped, surrounded with 
+curly braces) in which it was defined. 
+
+## Arrow Functions
+If you only have one expression, this function:
+```typescript
+const func = function add(a: number, b: number): number {
+    return a + b;
+}
+```
+can be shortened according to the arrow function notation:
+```typescript
+const func = (a: number, b: number) => a + b;
+```
+This is possible, since there is always an implicit return statement, when using this notation.
+
+Another neat way of using this notation is the following:
+```typescript
+const button = document.querySelector('button');
+
+if (button) {
+    button.addListener('click', event => console.log(event));
+}
+```
+where it is possible to even emit the function braces.
+
+## Default Arguments
+When using default arguments, it is important, that they 
+are used last in the function signature, since they are not 
+skipped.
+````typescript
+const func = (a: number, b: number = 1) => a + b;
+
+func(2);
+````
+
+## Spread Operator
+To avoid cumbersome array operations, the spread operator can be used as follows:
+````typescript
+const hobbies = ['skiing', 'freeletics'];
+const activeHobbies = ['hiking', ...hobbies];
+
+activeHobbies.push(...hobbies);
+````
+The same operator can be used for objects. Keep in mind 
+that here not a pointer to the old obejct is set, but 
+instead a totally new object is created:
+````typescript
+const person {
+    name: 'max',
+    age: 30
+};
+
+const copiedPerson = { ...person };
+````
+
+## Rest Parameter
+Using a unlimited and fleible amount of parameters. Here in combination with the reduce method provided for arrays.
+````typescript
+const func = (...numbers: numbers[]) => {
+    return numbers.reduce((curResult, curValue) => {
+        return curResult + curValue;
+    });
+};
+
+func(2, 10, 6, 7.2); // outputs 25.2
+````
