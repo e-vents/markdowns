@@ -228,7 +228,7 @@ const copiedPerson = { ...person };
 ````
 
 ## Rest Parameter
-Using a unlimited and fleible amount of parameters. Here in 
+Using a unlimited and flexible amount of parameters. Here in 
 combination with the reduce method provided for arrays.
 ````typescript
 const func = (...numbers: numbers[]) => {
