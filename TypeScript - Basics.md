@@ -265,6 +265,105 @@ Everything above is JavaScript syntax.
 
 # Advanced Types
 These topics are covered in this chapter (quick access):
-- [l](#l)
+- [Intersection Types](#intersection-types)
+- [Type Guards](#type-guards)
+- [Discriminated Unions](#discriminated-unions)
+- [Type Casting](#type-casting)
+- [Index Properties](#index-properties)
+- [Function Overloads](#function-overloads)
+- [Optional Chaning](#optional-chaning)
+- [Nullish Coalescing](#nullish-coalescing)
+- [Intersection Types](#intersection-types)
 
+In case of union types, the intersection would be the types, for example of two union types. For number | string and number | boolean this would be number. 
 
+In case of objects, the intersection is the combination of both types:
+````typescript
+type Employee = {
+    name: string,
+    startDate: Date
+}
+
+type Admin = {
+    name: string,
+    privileges: string[]
+}
+
+type ElevatedEmployee = Employee & Admin;
+
+const e1 = {
+    name = 'max',
+    startDate = new Date(),
+    privileges: ['read', 'write']
+}
+````
+Of course, the same structure could have been set up also with the aid of interfaces. A third interface with the same type assignment including the intersection sign would then be used instead.
+
+## Type Guards
+
+### typeof
+probably the best known type guard, which is built in VanillaJS
+
+### in
+If you use, let's say union types, it is oftentimes necessary to know which extact type is used at runtime. That is where type guards come into play.
+Consider the first two type definitions from the last code example for this here:
+````typescript
+type UnknownEmployee = Employee | Admin;
+
+function print(emp: UnknownEmployee) {
+    // no problem to access name because it exists in both types
+    console.log(emp.name);
+
+    // if (typeof emp === 'object') does obviously would not work
+    // if (emp.privileges) here the compiler would complain
+    if ('privileges' in emp) {
+        console.log(emp.privileges);
+    }
+}
+````
+
+### instanceof
+Consider the following example:
+````typescript
+class Car {
+    drive() {
+        console.log('driving...');
+    }
+}
+
+class Truck {
+    drive() {
+        console.log('driving a truck...');
+    }
+
+    loadCargo(amount: number) {
+        console.log('loading: '+amount);
+    }
+}
+
+type Vehicle = Car | Truck;
+
+const v1 = new Car();
+const v2 = new Truck();
+
+function useVehicle(v: Vehicle) {
+    vehicle.drive();
+    if (v instanceof Truck) {
+        v.loadCargo();
+    }
+}
+
+````
+With instanceof some extra safety is available, since it is not necessary to provide a string with the correct name of a method or property which we want to access. 
+
+## Discriminated Unions
+
+## Type Casting
+
+## Index Properties
+
+## Function Overloads
+
+## Optional Chaning
+
+## Nullish Coalescing
