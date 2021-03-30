@@ -15,8 +15,8 @@ These topics are covered in this chapter (quick access):
 - [Literal Types](#literal-types)
 - [Type Aliases](#type-aliases)
 - [Function Types](#function-types)
-- [Type "unknown"](#type-"unknown")
-- [Type "never"](#type-"never")
+- [Type "unknown"](#type-unknown)
+- [Type "never"](#type-never)
 
 ## Tuples 
 Tupels are not supported in VanillaJS. It is a fixed length and fixed typed array.
@@ -273,9 +273,8 @@ These topics are covered in this chapter (quick access):
 - [Type Casting](#type-casting)
 - [Index Properties](#index-properties)
 - [Function Overloads](#function-overloads)
-- [Optional Chaning](#optional-chaning)
+- [Optional Chaining](#optional-chaining)
 - [Nullish Coalescing](#nullish-coalescing)
-- [Intersection Types](#intersection-types)
 
 ## Intersection Types
 In case of union types, the intersection would be the types, for example of two union types. For number | string and number | boolean this would be number. 
