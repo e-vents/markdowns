@@ -465,12 +465,17 @@ const fetechedData = {
 const userInput = '';
 
 /*
-the logical or operator will fall back to the default value also when encountering falsy values like this empty string from userInput
+the logical or operator will fall back to the default 
+value also when encountering falsy values like this empty 
+string from userInput
 */
 const storedData = userInput || 'DEFAULT';
 
 /*
-nullish coalescing falls back to the default value, only when the received userInput would be null oder undefinded. Therefore, here the empty string will be stored
+nullish coalescing falls back to the default value, only 
+when the received userInput would be null oder 
+undefinded. Therefore, here the empty string will be 
+stored
 */
 const storedData = userInput ?? 'DEFAULT';
 ````
