@@ -117,7 +117,7 @@ addAndHandle(1, 3, (result) => {
  returned value. The returned value will be ignored.
 
 ## Type "unknown"
-Unknown is mostentimes the better choice over any, because 
+Unknown is oftentimes the better choice over any, because 
 it provides at least some type checking:
 
 ````typescript
@@ -135,7 +135,7 @@ userName = userInput2; // doesn't throw an error
 ````
 
 ## Type "never"
-The infered type here would actually be void. If you want 
+The inferred type here would be void. If you want 
 to make your intention with such a function very clear, it 
 is best to do it so, using the never type. It clearly 
 states, that not even undefined is returned, but instead 
@@ -150,7 +150,7 @@ generateError('error occured', 500);
 ```
 
 # Next-gen JS and TS
-This chapter is refering to JS in the version ES6 or newer.
+This chapter is referring to JS in the version ES6 or newer.
 
 These topics are covered in this chapter (quick access):
 - [let and const Keywords](#let-and-const-keywords)
@@ -217,7 +217,7 @@ const activeHobbies = ['hiking', ...hobbies];
 activeHobbies.push(...hobbies);
 ````
 The same operator can be used for objects. Keep in mind 
-that here not a pointer to the old obejct is set, but 
+that here not a pointer to the old object is set, but 
 instead a totally new object is created:
 ````typescript
 const person {
@@ -255,9 +255,9 @@ const person {
     age: 30
 };
 /*
-here you have to specify the corresponding names of the 
+here you must specify the corresponding names of the 
 original objects keys.
-Assinging the value to a new key with a different 
+Assigning the value to a new key with a different 
 identifier is possible though.
 */
 const { firstName: givenName, age } = person;
@@ -364,7 +364,7 @@ function useVehicle(v: Vehicle) {
 }
 
 ````
-With instanceof some extra safety is available, since it is not necessary to provide a string with the correct name of a method or property which we want to access. 
+With instanceof some extra safety is available since it is not necessary to provide a string with the correct name of a method or property which we want to access. 
 
 ## Discriminated Unions
 This is a pattern, that makes working with type guards easier when using f.e. union types. It is available when working with object types.
@@ -438,10 +438,10 @@ function combine(i1: Combinable, i2: Combinable) {
     // process logic
 }
 ````
-## Optional Chaning
+## Optional Chaining
 In bigger projects and when receiving (nested) data from a back-end, you do not always know with certainty what you will get. 
 
-For example here, for some reason the job object inside the user object has not been fetched. This can be checked using the optional chaining when running on TS 3.7 or higher.
+For example, assume that for some reason the job object inside the user object has not been fetched. This can be checked using the optional chaining when running on TS 3.7 or higher.
 ````typescript
 const fetechedData = {
     id: 'u1',
@@ -470,7 +470,7 @@ the logical or operator will fall back to the default value also when encounteri
 const storedData = userInput || 'DEFAULT';
 
 /*
-nullish coalescing falls back to the default value, only when the received userInput would be null oder undefinded. Therefore here the empty string will be stored
+nullish coalescing falls back to the default value, only when the received userInput would be null oder undefinded. Therefore, here the empty string will be stored
 */
 const storedData = userInput ?? 'DEFAULT';
 ````
