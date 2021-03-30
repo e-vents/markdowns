@@ -41,7 +41,7 @@ if (Role.READONLY) {
 ## Union Types
 Role is eighter a number or a boolean:
 ````typescript
-function combine(i1: number | boolean, i2: number | boolean) {
+function combine(i1: number | string, i2: number | string) {
     // perform a runtime check
     if (typeof i1 === 'number' && ...) {
         // process some logic
@@ -306,6 +306,13 @@ Of course, the same structure could have been set up also with the aid of interf
 
 ### typeof
 probably the best known type guard, which is built in VanillaJS
+````typescript
+function combine(a: Combinable, b: Combinable) {
+    if (typeof a === 'string' ...) {
+        // process logic
+    }
+}
+`````
 
 ### in
 If you use, let's say union types, it is oftentimes necessary to know which extact type is used at runtime. That is where type guards come into play.
@@ -416,22 +423,54 @@ interface ErrorContainer {
 
 // also no specified property at all would be valid
 const errorBag: ErrorContainer = {
-    email: 'not a valid address'
+    email: 'not a valid address',
     username: 'not a valid username'
 }
 ````
 ## Function Overloads
-
+With the function overloads below, it is possible narrow down what exact type will be returned when using which arguments.
 ````typescript
+type Combinable = number | string;
 
+function combine(i1: string, i2: string): string;
+function combine(i1: number, i2: number): number;
+function combine(i1: Combinable, i2: Combinable) {
+    // process logic
+}
 ````
 ## Optional Chaning
+In bigger projects and when receiving (nested) data from a back-end, you do not always know with certainty what you will get. 
 
+For example here, for some reason the job object inside the user object has not been fetched. This can be checked using the optional chaining when running on TS 3.7 or higher.
 ````typescript
+const fetechedData = {
+    id: 'u1',
+    name: 'john',
+    job: {
+        title: 'ceo',
+        description: 'my own company'
+    }
+    
+    //the JS-way of checking if something is present:
+    console.log(fetchedData.job && fetchedData.job.title);
 
+   // the TS-way of the same check using optional chaining
+   console.log(fetchedData?.job?.title);
+}
 ````
 ## Nullish Coalescing
 
 ````typescript
+// see this as fetched data from a back-end
+const userInput = '';
 
+/*
+the logical or operator will fall back to the default value also when encountering falsy values like this empty string from userInput
+*/
+const storedData = userInput || 'DEFAULT';
+
+/*
+nullish coalescing falls back to the default value, only when the received userInput would be null oder undefinded. Therefore here the empty string will be stored
+*/
+const storedData = userInput ?? 'DEFAULT';
 ````
