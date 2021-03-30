@@ -1,5 +1,5 @@
 # Introduction
-This is a summary of the features of TypScript and, partly of next-gen JavaScript.
+This is a summary of the features of TypScript and partly of next-gen JavaScript.
 
 These topics are covered (quick access):
 - [Types](#types)
@@ -19,7 +19,7 @@ These topics are covered in this chapter (quick access):
 - [Type "never"](#type-"never")
 
 ## Tuples 
-are not supported in VanillaJS. It is a fixed length and fixed typed array.
+Tupels are not supported in VanillaJS. It is a fixed length and fixed typed array.
 ```typescript
 role: [number, string];
 role = [2, 'admin'];
@@ -76,6 +76,7 @@ function combine(
 // outputs 3012 of type number
 const combineStringAges = combine('30', '12', 'as-number');
 ````
+
 ## Type Aliases
 They are also called **custom types**. Working with union types can be cumbersome and type aliases can be a good feature to simplify this.
 ````typescript
@@ -111,7 +112,7 @@ addAndHandle(1, 3, (result) => {
     console.log(result)
 });
 ```
-hint: callback functions can return something, even if the
+>callback functions can return something, even if the
  argument on which they're passed does NOT expect a 
  returned value. The returned value will be ignored.
 
@@ -240,6 +241,7 @@ const func = (...numbers: numbers[]) => {
 
 func(2, 10, 6, 7.2); // outputs 25.2
 ````
+
 ## Array and Object Destructuring
 This snipped of code does create three variables. Two with 
 single string values and one new string[] with the 
@@ -357,13 +359,78 @@ function useVehicle(v: Vehicle) {
 With instanceof some extra safety is available, since it is not necessary to provide a string with the correct name of a method or property which we want to access. 
 
 ## Discriminated Unions
+This is a pattern, that makes working with type guards easier when using f.e. union types. It is available when working with object types.
 
+````typescript
+interface Bird {
+    // a type literal type has exactly one value,
+    type: 'bird';
+    flyingSpeed: number;
+}
+
+interface Horse {
+    // which is called discriminated union
+    type: 'horse';
+    runningSpeed: number;
+}
+
+type Animal: Bird | Horse;
+
+function moveAnimal(animal: Animal) {
+    let speed;
+    // if (animal instanceof Horse) would not work
+    // if ('runningSpeed' in animal) would also work
+    switch (animal.type) {
+        case 'bird':
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeed;
+            break;
+    }
+    console.log('moving with speed: '+speed);
+}
+// we even have autocompletion when the type is set
+moveAnimal({type: 'bird', flyingSpeed: 10});
+````
 ## Type Casting
+Type casting is especially usefull for example when working with the DOM.
+Other than with the querySelector method, with the getElementById method, typescript is not able to infer wich exact type you will get.
 
+````typescript
+const userInput = <HTMLInputElement>document.getElementById('user-input');
+
+//  this version exists to not clash with react syntax
+const userInput = document.getElementById('user-input') as HTMLInputElement;
+
+userInput.value = 'hi there';
+````
+The exclamation mark tells typescript, that this expression will never yield null. It is not needed however, when working with type casting. Another way to solve this check without the exclamation mark would be with a simple if check.
 ## Index Properties
+With index properties, when used like in the interface below, it is possible to asign a flexible amount of properties when relying on that interface.
+````typescript
+interface ErrorContainer {
+    [property: string]: string;
+}
 
+// also no specified property at all would be valid
+const errorBag: ErrorContainer = {
+    email: 'not a valid address'
+    username: 'not a valid username'
+}
+````
 ## Function Overloads
 
+````typescript
+
+````
 ## Optional Chaning
 
+````typescript
+
+````
 ## Nullish Coalescing
+
+````typescript
+
+````
