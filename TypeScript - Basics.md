@@ -473,7 +473,7 @@ const storedData = userInput || 'DEFAULT';
 
 /*
 nullish coalescing falls back to the default value, only 
-when the received userInput would be null oder 
+when the received userInput would be null or
 undefinded. Therefore, here the empty string will be 
 stored
 */
