@@ -184,7 +184,7 @@ can be shortened according to the arrow function notation:
 ```typescript
 const func = (a: number, b: number) => a + b;
 ```
-This is possible, since there is always an implicit return 
+>This is possible, since there is always an implicit return 
 statement, when using this notation.
 
 Another neat way of using this notation is the following:
