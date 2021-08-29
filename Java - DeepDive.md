@@ -44,6 +44,23 @@ ISpeaker speaker = SpeakerFactory.getSpeaker(Language.German);
 ````
 ## Singleton Pattern
 
+With this pattern, which is also a creational pattern, it is possible to ensure, that exactly one instance of a class exists. This pattern is mostly used in multi-threaded and database applications. It is used in logging, cahcing, thread pools, and configuration management.
+
+````java
+public class Demonstrator {
+  // static class attribute to reference the (only) instance of the class
+  private static Demonstrator singleton;
+  // static factory method provides the access from outside
+  public static Demonstrator getInstance() {
+    if (singleton == null)
+      return new Demonstrator();
+    return singleton;
+  }
+  // private constructor, preventing access from outside
+  private Demonstrator() { }
+}
+````
+
 ## Observer Pattern
 
 ## Strategy Pattern
